@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: smsauth
+#  profiles:
+#    active: local
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
+
+sms:
+  auth:
+    code-expire-seconds: 180
+    send-limit-count: 5
+    send-limit-window-seconds: 3600
+    verify-fail-limit-count: 5
+    verified-expire-seconds: 300
+
+solapi:
+  api-key: ${SOLAPI_API_KEY}
+  api-secret: ${SOLAPI_API_SECRET}
+  sender: ${SOLAPI_SENDER}
+  base-url: https://api.solapi.com
